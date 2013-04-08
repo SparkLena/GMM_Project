@@ -1,5 +1,7 @@
 function [dimg] = fullImageDenoise(img, GS, noiseSTD)
 
+echo "Tal is in the house!"
+
 [m n] = size(img);
 patches = im2patch(img);
 dPatches = zeros(size(patches));
