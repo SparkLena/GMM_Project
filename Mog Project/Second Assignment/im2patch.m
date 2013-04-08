@@ -1,6 +1,7 @@
 function out = im2patch(img)
 
 % Comment by Tal
+% 2nd comment by Tal
 
 m = size(img,1);
 n = size(img,2);
