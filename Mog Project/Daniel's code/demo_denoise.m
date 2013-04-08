@@ -6,6 +6,7 @@ I = double(rgb2gray(imread('160068.jpg')))/255;
 
 % add noise
 noiseSD = 25/255;
+randn('seed',0);
 noiseI = I + noiseSD*randn(size(I));
 fprintf('Haggai noisy psnr %f\n',calcpsnr(noiseI,I));
 excludeList = [];

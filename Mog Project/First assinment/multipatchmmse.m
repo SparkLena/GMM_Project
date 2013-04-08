@@ -1,6 +1,6 @@
 function xmmse = multipatchmmse(patches,GS,sigma)
 [n nPatches] = size(patches);
-
+% remove dc component of each patch
 dc = repmat(mean(patches,1),[n 1]);
 patches = patches - dc;
 

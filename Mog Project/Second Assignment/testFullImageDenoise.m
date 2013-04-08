@@ -14,4 +14,6 @@ fprintf('noisy psnr=%g noisy rmse=%g denoised psnr=%g denoised rmse=%g filtered 
 sep = zeros(m,1);
 imshow([img sep nimg sep dimg sep fimg]);
 collage = [img sep nimg sep dimg sep fimg];
+
 imwrite(collage,'collage.tiff');
+imwrite(dimg,'our_denoised.tiff');
