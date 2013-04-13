@@ -1,21 +1,19 @@
 function [mus,icov,pii]=fitMOGm_hir_ws(xL,mN,ws)
-
+% L is the maximum size of patch we want to learn
 L=ws-1;    
-    
-
- 
- 
-d=ws^2;
+% N = num of patches in xL
 N=size(xL,3);
-hws=floor(ws/2)
+%
 hxs=ceil(size(xL,1)/2);
-%itrsN=30;
+%
 itrsN=100;
-
+% init p
 p=[];
+%start iterations
 for itr=1:L
     
    tws=itr+1;
+   %calc the sizes of the patches we will use
    hws1=floor((tws-1)/2)
    hws2=ceil((tws-1)/2)
    

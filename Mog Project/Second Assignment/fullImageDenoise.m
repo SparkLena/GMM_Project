@@ -1,7 +1,7 @@
 function [dimg] = fullImageDenoise(img, GS, noiseSTD)
 
-echo "Tal is in the house!"
-echo "Change no. 2"
+%echo "Tal is in the house!"
+%echo "Change no. 2"
 
 [m n] = size(img);
 patches = im2patch(img);
