@@ -96,4 +96,13 @@ function [mus,icov,pii,p]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
       
     end
     
+    %Haggai - Save in GS format
+    GS.covs=cov;
+    GS.mixweights=pii;
+    GS.means=mus;
+    GS_fname = 'trained_GS_%d_components';
+    GS_fname=sprintf(GS_fname,mN);
+    save(GS_fname,'GS')
+
+    
     

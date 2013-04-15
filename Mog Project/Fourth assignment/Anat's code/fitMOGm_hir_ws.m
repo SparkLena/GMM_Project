@@ -13,8 +13,9 @@ itrsN=100;
 % init p
 p=[];
 %start iterations on patch sizes
-for itr=L:L
-    
+%for itr=1:L
+    %  @hack-Haggai to train only one level
+ for itr=L:L
    tws=itr+1;
    %calc the sizes of the patches we will use
    hws1=floor((tws-1)/2)

@@ -29,3 +29,4 @@ xL=xL-meanx;
 % call a function to learn the mixture params
 [mus,icov,pii]=fitMOGm_hir_ws(xL,mN,ws);
 
+

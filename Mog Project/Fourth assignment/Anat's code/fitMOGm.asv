@@ -63,11 +63,11 @@ function [mus,icov,pii,p]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
         logdet(j1)=sum(log(abs(diag(e))));
         % hicov is the 'root' of the j1 covariance matrix [ Cholesky decomposition]
         hicov(:,:,j1)=(e.^0.5)*u';
-        
+        % calc log likelihood of every patch in x according to Gaussian j1
         logp(j1,:)=-0.5*sum((hicov(:,:,j1)*(x-mus(:,j1*oV))).^2,1)+0.5*logdet(j1)+log(pii(j1));
       end
       
-      meanp(itr)=mean(sum(exp(logp),1))
+      meanp(itr)=mean(sum(exp(logp),1));
       logpm=max(logp,[],1);
       logp=logp-oVT*logpm;
       
@@ -91,9 +91,15 @@ function [mus,icov,pii,p]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
       pii=pii/sum(pii);
       toc
       if (mod(itr,10)==0)
-          eval(['save ',outname,' mus icov pii'])
+          eval(['save ',outname,' mus icov pii']);
       end
       
     end
+    
+    %Haggai - Save in GS format
+    GS.covs=cov;
+    GS.mixweights=pii;
+    GS.means=mus;
+    
     
     
