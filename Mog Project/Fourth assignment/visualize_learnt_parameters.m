@@ -33,7 +33,7 @@ for i=1:num_components
         IMG((j-1)*9+2:j*9,(i-1)*9+2:i*9)=res(:,:,j,i);
     end
 end
-filename_format='Gaussian_mixture_visualization_%d_components_%d_leading_singular_vectors.tiff';
+filename_format='Gaussian_mixture_visualization_%d_components_%d_leading_singular_vectors.png';
 filename = sprintf(filename_format,num_components,num_of_leading_singular_vectors);
 imwrite(IMG,filename);
 x=IMG;

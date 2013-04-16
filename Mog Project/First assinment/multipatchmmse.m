@@ -7,7 +7,7 @@ patches = patches - dc;
 
 xmmse=zeros(size(patches));
 
-weightVec = zeros(200, nPatches);
+weightVec = zeros(length(GS.mixweights), nPatches);
 
 for i=1:numel(GS.mixweights)
     weightVec(i,:) = mvnpdf(patches', GS.means(:,i)',GS.covs(:,:,i)+sigma^2*eye(64))';

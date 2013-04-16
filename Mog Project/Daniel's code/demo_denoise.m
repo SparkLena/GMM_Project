@@ -2,7 +2,7 @@ clear
 patchSize = 8;
 
 % load image
-I = double(rgb2gray(imread('160068.jpg')))/255;	
+I = double(rgb2gray(imread('peppers.png')))/255;	
 
 % add noise
 noiseSD = 25/255;

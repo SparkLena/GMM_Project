@@ -1,4 +1,4 @@
-function [mus,icov,pii,p]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
+function [mus,icov,pii,p,GS]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
 %
 % Fits a MoG to the data in x
 % x- is a [patchwidth^2 ]x[number of patches] matrix
@@ -52,8 +52,8 @@ function [mus,icov,pii,p]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
     
     %start EM iterations
     for itr=1:maxItr
-      itr
-      tic
+      %itr
+      %tic
       %  for all the components
       for j1=1:mN
          % calculate the eigen value decomposition of the j1 inverse
@@ -89,7 +89,7 @@ function [mus,icov,pii,p]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
       
       pii=spc;
       pii=pii/sum(pii);
-      toc
+      %toc
       if (mod(itr,10)==0)
           eval(['save ',outname,' mus icov pii']);
       end

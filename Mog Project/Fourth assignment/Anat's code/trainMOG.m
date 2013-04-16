@@ -1,4 +1,4 @@
-function x = trainMOG
+function GS  = trainMOG(num_components)
 %
 % learns a mixture model from the patches loaded from a file. Learns
 % mixtures according to the central patch in each patch supplied with sizes
@@ -10,7 +10,7 @@ load LMSmpPatches21x21g_wide
 %number of patches to be used 
 N=2000;
 % number of components in the mixture
-mN=10;
+mN=num_components;
 % maximum size of patch we want to learn
 ws=8;
 % size of patch calculations for mean removal
@@ -27,6 +27,6 @@ meanx=mean(mean(mean(xL(hxs-hws1:hxs+hws2,hxs-hws1:hxs+hws2,1:N))));
 %remove mean
 xL=xL-meanx;
 % call a function to learn the mixture params
-[mus,icov,pii]=fitMOGm_hir_ws(xL,mN,ws);
+[mus,icov,pii,GS]=fitMOGm_hir_ws(xL,mN,ws);
 
 

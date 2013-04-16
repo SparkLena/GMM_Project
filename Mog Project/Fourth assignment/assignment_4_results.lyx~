@@ -1,0 +1,397 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 2cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\noindent
+Assignment 4
+\end_layout
+
+\begin_layout Author
+\noindent
+Haggai Maron and Tal Amir
+\end_layout
+
+\begin_layout Part
+\noindent
+Number of components vs.
+ denoising power
+\end_layout
+
+\begin_layout Standard
+\noindent
+We checked how the denoising power of the mixture prior improves as a function
+ of the number of components in the mixture.
+ The denoising was done using MMSE estimation of patches and averaging of
+ overlapping patches.
+ The learning was done on 2000 patches [small number of patches to allow
+ a short experiment].
+ The result are shown in the image below.
+ We also compared the results to the results of denoising with MMSE using
+ Daniel's prior [2,000,000 patches 200 components].
+\end_layout
+
+\begin_layout Section
+\noindent
+Tiger image
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Graph:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename experiments/tiger/tiger psnr graph.png
+	width 15cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Noisy/1/5/10/200 components denoising results [according to order]:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename experiments/tiger/noisy.png
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename experiments/tiger/160068.jpg_denosided_1_components.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename experiments/tiger/160068.jpg_denosided_5_components.png
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename experiments/tiger/160068.jpg_denosided_10_components.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename experiments/tiger/160068_denoised_200_components.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Comparison to Daniel's prior [no EPLL]
+\end_layout
+
+\begin_layout Standard
+\noindent
+The initial PSNR of the noisy image: 
+\series bold
+20.17
+\end_layout
+
+\begin_layout Standard
+\noindent
+Results when using Daniel's prior [200 components and 2 million patches]:
+\series bold
+ 29.00
+\end_layout
+
+\begin_layout Standard
+\noindent
+Our results: 
+\series bold
+28.42
+\series default
+ using 10 components and 2000 patches
+\end_layout
+
+\begin_layout Section
+\noindent
+Peppers image
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Graph:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename experiments/peppers/peppers_psnr_graph.png
+	width 15cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Noisy/1/5/10/200 components denoising results [according to order]:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename experiments/peppers/noisy.png
+	width 6cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename experiments/peppers/peppers.png_denosided_1_components.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename experiments/peppers/peppers.png_denosided_5_components.png
+	width 6cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename experiments/peppers/peppers.png_denosided_10_components.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename experiments/peppers/peppers_denoised_200_components.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Comparison to Daniel's prior [no EPLL]:
+\end_layout
+
+\begin_layout Standard
+\noindent
+The initial PSNR of the noisy image: 
+\series bold
+20.18
+\end_layout
+
+\begin_layout Standard
+\noindent
+Results when using Daniel's prior [200 components and 2 million patches]:
+ 
+\series bold
+33.01
+\end_layout
+
+\begin_layout Standard
+\noindent
+Our results: 
+\series bold
+32.74
+\series default
+ using 10 components and 2000 patches.
+\end_layout
+
+\begin_layout Section
+\noindent
+Thoughts
+\end_layout
+
+\begin_layout Standard
+\noindent
+Maybe for denoising we don’t not need too many components? it looks like
+ we can get very good results with just a few components.
+\end_layout
+
+\begin_layout Part
+\noindent
+Visualizing the learnt mixture model
+\end_layout
+
+\begin_layout Standard
+\noindent
+We would like to see what kind of components are learnt.
+ In order to visualize this we wrote a function that constructs a table
+ of singular vectors of the covariance matrices of each component.
+ Each column in the following table represent a component in the mixture
+ according to descending order of the mixture weights.
+ In each column we can see the first 5 most important singular vectors.
+ Note that this singular vectors show us dependencies that were learnt between
+ the pixels.
+\end_layout
+
+\begin_layout Section
+\noindent
+one components mixture
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename experiments/Visualizing learnt covariance matrices/Gaussian_mixture_visualization_1_components_5_leading_singular_vectors.tiff
+	scale 500
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see that the strongest singular vector is constant, and the other
+ singular vectors show vertical and horizontal textures.
+\end_layout
+
+\begin_layout Section
+\noindent
+5 components mixture
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename experiments/Visualizing learnt covariance matrices/Gaussian_mixture_visualization_5_components_5_leading_singular_vectors.tiff
+	scale 500
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Again, we see that the strongest singular vectors are all constant.
+ In addition we can see that some diagonal textures appear.
+\end_layout
+
+\begin_layout Section
+\noindent
+10 components mixture
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename experiments/Visualizing learnt covariance matrices/Gaussian_mixture_visualization_10_components_5_leading_singular_vectors.tiff
+	scale 500
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see that richer textures were learnt, but one can also see that the
+ 2,3 and 7th components look the same - probably due to poor convergence
+ of the EM algorithm.
+\end_layout
+
+\begin_layout Section
+\noindent
+Thoughts
+\end_layout
+
+\end_body
+\end_document
