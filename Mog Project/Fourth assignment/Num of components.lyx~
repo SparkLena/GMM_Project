@@ -130,7 +130,7 @@ Noisy/1/5/10/200 components denoising results [according to order]:
 
 \end_inset
 
-
+ 
 \begin_inset Graphics
 	filename experiments/tiger/160068.jpg_denosided_1_components.png
 	scale 30
@@ -148,7 +148,7 @@ Noisy/1/5/10/200 components denoising results [according to order]:
 
 \end_inset
 
-
+ 
 \begin_inset Graphics
 	filename experiments/tiger/160068.jpg_denosided_10_components.png
 	scale 30
@@ -166,7 +166,7 @@ Noisy/1/5/10/200 components denoising results [according to order]:
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -231,7 +231,7 @@ Noisy/1/5/10/200 components denoising results [according to order]:
 
 \end_inset
 
-
+ 
 \begin_inset Graphics
 	filename experiments/peppers/peppers.png_denosided_1_components.png
 	width 6cm
@@ -249,7 +249,7 @@ Noisy/1/5/10/200 components denoising results [according to order]:
 
 \end_inset
 
-
+ 
 \begin_inset Graphics
 	filename experiments/peppers/peppers.png_denosided_10_components.png
 	width 6cm
@@ -267,7 +267,7 @@ Noisy/1/5/10/200 components denoising results [according to order]:
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -342,11 +342,6 @@ one components mixture
 
 \end_layout
 
-\begin_layout Standard
-We can see that the strongest singular vector is constant, and the other
- singular vectors show vertical and horizontal textures.
-\end_layout
-
 \begin_layout Section
 \noindent
 5 components mixture
@@ -360,11 +355,6 @@ We can see that the strongest singular vector is constant, and the other
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Again, we see that the strongest singular vectors are all constant.
- In addition we can see that some diagonal textures appear.
 \end_layout
 
 \begin_layout Section
@@ -383,14 +373,7 @@ Again, we see that the strongest singular vectors are all constant.
 \end_layout
 
 \begin_layout Standard
-We can see that richer textures were learnt, but one can also see that the
- 2,3 and 7th components look the same - probably due to poor convergence
- of the EM algorithm.
-\end_layout
 
-\begin_layout Section
-\noindent
-Thoughts
 \end_layout
 
 \end_body

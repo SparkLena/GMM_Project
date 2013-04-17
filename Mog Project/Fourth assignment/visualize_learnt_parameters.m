@@ -20,7 +20,10 @@ num_components = size(covs,3);
      k=I(i);
      [U S V]=svd(covs(:,:,k));
      for j=1:patch_dim
-         mat=vec2mat(U(:,j),8);
+         x = U(:,j);
+         x = x - min(x);
+         x = x / max(x);
+         mat = vec2mat(x,8);
          res(:,:,j,k)=mat;
      end
  end

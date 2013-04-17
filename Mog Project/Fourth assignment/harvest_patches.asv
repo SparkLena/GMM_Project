@@ -1,0 +1,12 @@
+function patch_db = harvest_patches(big_patch_db, out_patch_dim)
+
+nPatches = size(big_patch_db,3);
+
+out = zeros(out_patch_dim,0);
+
+for i=1:nPatches
+    out = [out; im2patch(big_patch_db(:,:,i)];
+    end
+
+        
+     
