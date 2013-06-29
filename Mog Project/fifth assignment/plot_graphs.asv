@@ -1,0 +1,20 @@
+function h = plot_graphs(psnr_mat)
+
+figure; annotation('textbox', [0 0.9 1 0.1], 'String', 'PSNR vs. num of components and num of patches',  'EdgeColor', 'none',     'HorizontalAlignment', 'center')
+p=plot(1:size(psnr_mat,2),psnr_mat(1,:),'k-');
+hold on;
+p=plot(1:size(psnr_mat,2),psnr_mat(2,:),'k-');
+set(p,'Color','red','LineWidth',1)
+hold on;
+p=plot(1:size(psnr_mat,2),psnr_mat(3,:),'k-');
+set(p,'Color','yellow','LineWidth',1)
+hold on;
+p=plot(1:size(psnr_mat,2),psnr_mat(3,:),'k-');
+set(p,'Color','yellow','LineWidth',1)
+hold on;
+p=plot(1:size(psnr_mat,2),psnr_mat(3,:),'k-');
+set(p,'Color','yellow','LineWidth',1)
+hold on;
+
+
+end

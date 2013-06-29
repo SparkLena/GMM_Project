@@ -1,4 +1,4 @@
-function [mus,icov,pii,p,GS]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
+function [mus,icov,cov,pii,p]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
 %
 % Fits a MoG to the data in x
 % x- is a [patchwidth^2 ]x[number of patches] matrix
@@ -10,7 +10,7 @@ function [mus,icov,pii,p,GS]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
 %initialization of the argumenets and params for the EM algorithm
     [d,N]=size(x);
     if ~exist('outname','var')
-      outname=sprintf('MOGm_params_d%03d_mN%03d',d,mN)
+      outname=sprintf('MOGm_params_d%03d_mN%03d',d,mN);
     end
     oVT=ones(mN,1);
     oV=ones(1,N);
@@ -52,6 +52,7 @@ function [mus,icov,pii,p,GS]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
     
     %start EM iterations
     for itr=1:maxItr
+        itr
       %itr
       %tic
       %  for all the components
@@ -83,7 +84,11 @@ function [mus,icov,pii,p,GS]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
                 
         cov(:,:,j1)=cov(:,:,j1)-mus(:,j1)*mus(:,j1)';
         [u,e]=eig(cov(:,:,j1));
-        e=diag(1./max(diag(e),0.1^8));
+        % make sure that we dont have very small or very large e. values
+        e=diag(max(abs(diag(e)),10^-6));
+        e=diag(min(abs(diag(e)),10^6));
+        %calc icov
+        e=diag(1./diag(e));
         icov(:,:,j1)=u*e*u';
       end
       
@@ -96,13 +101,7 @@ function [mus,icov,pii,p,GS]=fitMOGm(x,mN,p,maxItr,mus,icov,pii,outname)
       
     end
     
-    %Haggai - Save in GS format
-    GS.covs=cov;
-    GS.mixweights=pii;
-    GS.means=mus;
-    GS_fname = 'trained_GS_%d_components';
-    GS_fname=sprintf(GS_fname,mN);
-    save(GS_fname,'GS')
+   
 
     
     
