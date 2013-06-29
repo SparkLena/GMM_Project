@@ -18,6 +18,8 @@ set(p,'Color','green','LineWidth',1)
 p=plot(num_patches,psnr_mat(6,:),'k-');
 set(p,'Color','magenta','LineWidth',1)
 hleg1 = legend('1 component','21 components','41 components','61 components','81 components','101 components');
+
+hleg1 = legend('1 component','21 components','41 components','61 components','81 components','101 components');
 xlabel('Number of patches we used when learning the MoG');
 ylabel('PSNR');
 

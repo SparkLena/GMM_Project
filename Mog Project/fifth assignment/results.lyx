@@ -25,9 +25,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
 \use_esint 1
 \use_mhchem 1
@@ -42,6 +43,13 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 1cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -61,13 +69,18 @@
 
 \begin_layout Title
 \noindent
-Checking the relation between number of patches, number of components and
- denoising results
+Some more results - MoG denoising
 \end_layout
 
 \begin_layout Author
 \noindent
 Haggai Maron & Tal Amir
+\end_layout
+
+\begin_layout Part*
+\noindent
+Checking the relation between number of patches, number of components and
+ denoising results
 \end_layout
 
 \begin_layout Standard
@@ -83,7 +96,7 @@ In order to see what is the relation between the denoising ability of MMSE
  The patches where taken form the Berkeley segmentation database.
 \end_layout
 
-\begin_layout Part*
+\begin_layout Section*
 \noindent
 Results
 \end_layout
@@ -116,6 +129,123 @@ It is clear that when we learn only one component [i.e.
 
  patches the results are practically the same.
  
+\end_layout
+
+\begin_layout Section*
+Component weights vs.
+ number of components
+\end_layout
+
+\begin_layout Standard
+A possible explanation to the phenomenon we saw above [i.e.
+ the fact that there is no significant difference between 20 components
+ and 100 components when we use a large data set for learning] is that maybe
+ when we use more then 20 components, we will get components with weight
+ that is practically zero.
+ The following plot shows that it is not true and when we use more then
+ 20 components we learn something meaningful, or in other words the weight
+ of the extra components is not so small.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename mixture weights vs. component number
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+\noindent
+The difference between samples from a MoG and the strongest singular vectors
+ of the strongest components
+\end_layout
+
+\begin_layout Standard
+\noindent
+As a sanity check we visualize both the strongest singular vectors of the
+ strongest components in the mixture, and in addition, we sample and visualize
+ 16 samples from the mixture.
+ We would like to see if indeed the singular vectors are a similar to the
+ samples.
+ We tried 2 mixtures and, at least for us, it seems like there is a similarity.
+\end_layout
+
+\begin_layout Section*
+\noindent
+21 components mixture that was trained on 100K patches
+\end_layout
+
+\begin_layout Subsection*
+\noindent
+singular vector visualization
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename Gaussian_mixture_visualization_21_components_3_leading_singular_vectors.png
+	scale 250
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\noindent
+samples
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename 21 comps 101K patches samples.jpg
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\noindent
+101 components mixture that was trained on 100K patches
+\end_layout
+
+\begin_layout Subsection*
+\noindent
+singular vector visualization
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename Gaussian_mixture_visualization_101_components_3_leading_singular_vectors.png
+	scale 250
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\noindent
+samples
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename 101 comps 101K patches samples.jpg
+	scale 20
+
+\end_inset
+
+
 \end_layout
 
 \end_body
